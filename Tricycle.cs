@@ -1,18 +1,18 @@
-﻿// Author:  Kyle Chapman and Kyle Vardy
-// Created: October 1, 2025
+﻿// Author:  Kyle Vardy
+// Created: October 30, 2025
 // Updated: October 30, 2025
 // Description:
-// Object storing infromation about a car extending the vehicle class
+// Object storing infromation about a Trycycle extending the vehicle class
 
 namespace CarList
 {
     /// <summary>
     /// Stores info on cars in memory
     /// </summary>
-    internal class Car : Vehicle
+    internal class Trycycle : Vehicle
     {
         // Setup local properties
-        private bool isElectric;
+        private double handleBarHeight;
 
         /// <summary>
         /// Fill all the variables about the car
@@ -22,33 +22,34 @@ namespace CarList
         /// <param name="year">The year the car was made</param>
         /// <param name="price">The price of the car</param>
         /// <param name="isNew">If the car is used or not</param>
-        /// <param name="isElectric">If the car is electric or not</param>
-        public Car(string make, string model, int year, decimal price, bool isNew, bool isElectric) : base(make, model, year, price, isNew)
+        /// <param name="handleBarHeight">The height of the handle bar in centimeters</param>
+        public Trycycle(string make, string model, int year, decimal price, bool isNew, double handleBarHeight) : base(make, model, year, price, isNew)
         {
-            this.isElectric = isElectric;
+            this.handleBarHeight = handleBarHeight;
         }
 
         /// <summary>
         /// Defualt constructor
         /// </summary>
-        public Car() : base()
+        public Trycycle() : base()
         {
-            this.isElectric = false;
+            this.handleBarHeight = 0;
         }
-        
+
         /// <summary>
-        /// Getter and setter for isElectric property
+        /// Getter and setter for handleBarHeight property
+        /// Value should always be in centimeters
         /// </summary>
-        public bool IsElectric
+        public double IsElectric
         {
             get
             {
-                return isElectric;
+                return handleBarHeight;
             }
 
             set
             {
-                isElectric = value;
+                handleBarHeight = value;
             }
         }
 
@@ -58,7 +59,7 @@ namespace CarList
         /// <returns>A human readable string of all properties in the class</returns>
         public override string ToString()
         {
-            return base.ToString() + String.Format(", Electric: %s", isElectric);
+            return base.ToString() + String.Format(", Handle Bar Height: %s", handleBarHeight);
         }
     }
 }
