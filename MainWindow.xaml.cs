@@ -1,4 +1,5 @@
-﻿using System.Text;
+﻿using System.Collections.ObjectModel;
+using System.Text;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Data;
@@ -16,23 +17,38 @@ namespace CarList
     /// </summary>
     public partial class MainWindow : Window
     {
-
-        List<Car> cars = new List<Car>();
+        // Cars list as an observable collection so the list will auto update when I add to it
+        ObservableCollection<Car> cars = new ObservableCollection<Car>();
 
         public MainWindow()
         {
             InitializeComponent();
 
-            cars.Add(new Car("T", "e", 2, 7, false));
-
+            // Set the item source to be the cars collection
             carsList.ItemsSource = cars;
             
             // Setup year combobox
+            // Loop through each number between this year and this year - 50
             for (int i = DateTime.Now.Year; i >= DateTime.Now.Year - 50; i--)
             {
                 comboBoxYear.Items.Add(i);
             }
+        }
 
+        private void EnterButtonClick(object sender, RoutedEventArgs e)
+        {
+            if (comboBoxYear.SelectedIndex != -1 && comboBoxMake.SelectedIndex != -1 && txtModel.Text != "" && txtPrice.Text != "") {
+                if (decimal.TryParse(txtPrice.Text, out decimal price))
+                {
+                    cars.Add(new Car(comboBoxMake.Text, txtModel.Text, int.Parse(comboBoxYear.Text), price, checkBoxNew.IsChecked.Value));
+                } else
+                {
+                    MessageBox.Show("Price must be a valid number x.xx");
+                }
+            } else
+            {
+                MessageBox.Show("All fields must be filled");
+            }
         }
     }
 }
