@@ -12,12 +12,12 @@
             <RowDefinition Height = "*"/>
             <RowDefinition Height = "40"/>
         </Grid.RowDefinitions>
-        <Label Content="Make:" HorizontalAlignment="Left" Margin="93,10,0,0" VerticalAlignment="Top" Grid.Row="0"/>
-        <Label Content="Model:" HorizontalAlignment="Left" Margin="88,36,0,0" VerticalAlignment="Top" Grid.Row="0"/>
-        <Label Content="Year:" HorizontalAlignment="Left" Margin="100,62,0,0" VerticalAlignment="Top" Grid.Row="0"/>
-        <Label Content="Price:" HorizontalAlignment="Left" Margin="96,88,0,0" VerticalAlignment="Top" Grid.Row="0" RenderTransformOrigin="0.505,1.479"/>
-        <Label Content="New:" HorizontalAlignment="Left" Margin="98,113,0,0" VerticalAlignment="Top" Grid.Row="0"/>
-        <ComboBox x:Name="comboBoxMake" HorizontalAlignment="Left" Margin="164,14,0,0" VerticalAlignment="Top" Width="120" Grid.Row="0">
+        <Label Content="_Make:" HorizontalAlignment="Left" Margin="93,10,0,0" VerticalAlignment="Top" Grid.Row="0" Target="{Binding ElementName=comboBoxMake}"/>
+        <Label Content="Mode_l:" HorizontalAlignment="Left" Margin="88,36,0,0" VerticalAlignment="Top" Grid.Row="0" Target="{Binding ElementName=txtModel}"/>
+        <Label Content="_Year:" HorizontalAlignment="Left" Margin="100,62,0,0" VerticalAlignment="Top" Grid.Row="0" Target="{Binding ElementName=comboBoxYear}"/>
+        <Label Content="_Price:" HorizontalAlignment="Left" Margin="96,88,0,0" VerticalAlignment="Top" Grid.Row="0" RenderTransformOrigin="0.505,1.479" Target="{Binding ElementName=txtPrice}"/>
+        <Label Content="_New:" HorizontalAlignment="Left" Margin="98,113,0,0" VerticalAlignment="Top" Grid.Row="0" Target="{Binding ElementName=checkBoxNew}"/>
+        <ComboBox x:Name="comboBoxMake" HorizontalAlignment="Left" Margin="164,14,0,0" VerticalAlignment="Top" Width="120" Grid.Row="0" ToolTip="Choose the make of the vehicle">
             <ComboBoxItem>Toyota</ComboBoxItem>
             <ComboBoxItem>Honda</ComboBoxItem>
             <ComboBoxItem>Ford</ComboBoxItem>
@@ -29,10 +29,10 @@
             <ComboBoxItem>Ram</ComboBoxItem>
             <ComboBoxItem>Fiat</ComboBoxItem>
         </ComboBox>
-        <TextBox x:Name="txtModel" HorizontalAlignment="Left" Margin="164,41,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" Grid.Row="0"/>
-        <ComboBox x:Name="comboBoxYear" HorizontalAlignment="Left" Margin="164,64,0,0" VerticalAlignment="Top" Width="120" Grid.Row="0"/>
-        <TextBox x:Name="txtPrice" HorizontalAlignment="Left" Margin="164,90,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" Grid.Row="0"/>
-        <CheckBox x:Name="checkBoxNew" HorizontalAlignment="Left" Margin="164,118,0,0" VerticalAlignment="Top" Grid.Row="0"/>
+        <TextBox x:Name="txtModel" HorizontalAlignment="Left" Margin="164,41,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" Grid.Row="0" ToolTip="Enter the model of the vehicle"/>
+        <ComboBox x:Name="comboBoxYear" HorizontalAlignment="Left" Margin="164,64,0,0" VerticalAlignment="Top" Width="120" Grid.Row="0" ToolTip="Choose the year of the vehcile"/>
+        <TextBox x:Name="txtPrice" HorizontalAlignment="Left" Margin="164,90,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" Grid.Row="0" ToolTip="Enter the price of the vehicle"/>
+        <CheckBox x:Name="checkBoxNew" HorizontalAlignment="Left" Margin="164,118,0,0" VerticalAlignment="Top" Grid.Row="0" ToolTip="Select if the vehicle is new"/>
 
 
         <DataGrid x:Name="carsList" Grid.Row="1" IsReadOnly="True" AutoGenerateColumns="False">
@@ -45,8 +45,8 @@
                 <DataGridTextColumn Header="Price" Binding="{Binding Price}" Width="60*"/>
             </DataGrid.Columns>
         </DataGrid>
-        <Button Content="Exit" HorizontalAlignment="Right" Margin="0,0,10,0" Grid.Row="2" VerticalAlignment="Center" Width="40" Click="ExitButtonClick"/>
-        <Button Content="Reset" HorizontalAlignment="Right" Margin="0,0,60,0" Grid.Row="2" VerticalAlignment="Center" Width="40" Click="ResetButtonClick"/>
-        <Button Content="Enter" HorizontalAlignment="Right" Margin="0,0,110,0" Grid.Row="2" VerticalAlignment="Center" Width="40" Click="EnterButtonClick"/>
+        <Button Content="_Exit" HorizontalAlignment="Right" Margin="0,0,10,0" Grid.Row="2" VerticalAlignment="Center" Width="40" Click="ExitButtonClick" ToolTip="Exit the program"/>
+        <Button Content="_Reset" HorizontalAlignment="Right" Margin="0,0,60,0" Grid.Row="2" VerticalAlignment="Center" Width="40" Click="ResetButtonClick" ToolTip="Reset the screen and the list"/>
+        <Button Content="En_ter" HorizontalAlignment="Right" Margin="0,0,110,0" Grid.Row="2" VerticalAlignment="Center" Width="40" Click="EnterButtonClick" ToolTip="Enter the vehicle to the list"/>
     </Grid>
 </Window>
