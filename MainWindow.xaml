@@ -45,8 +45,8 @@
                 <DataGridTextColumn Header="Price" Binding="{Binding Price}" Width="60*"/>
             </DataGrid.Columns>
         </DataGrid>
-        <Button Content="_Exit" HorizontalAlignment="Right" Margin="0,0,10,0" Grid.Row="2" VerticalAlignment="Center" Width="40" Click="ExitButtonClick" ToolTip="Exit the program"/>
-        <Button Content="_Reset" HorizontalAlignment="Right" Margin="0,0,60,0" Grid.Row="2" VerticalAlignment="Center" Width="40" Click="ResetButtonClick" ToolTip="Reset the screen and the list"/>
         <Button Content="En_ter" HorizontalAlignment="Right" Margin="0,0,110,0" Grid.Row="2" VerticalAlignment="Center" Width="40" Click="EnterButtonClick" ToolTip="Enter the vehicle to the list"/>
+        <Button Content="_Reset" HorizontalAlignment="Right" Margin="0,0,60,0" Grid.Row="2" VerticalAlignment="Center" Width="40" Click="ResetButtonClick" ToolTip="Reset the screen and the list"/>
+        <Button Content="_Exit" HorizontalAlignment="Right" Margin="0,0,10,0" Grid.Row="2" VerticalAlignment="Center" Width="40" Click="ExitButtonClick" ToolTip="Exit the program"/>
     </Grid>
 </Window>
