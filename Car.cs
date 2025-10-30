@@ -9,16 +9,10 @@ namespace CarList
     /// <summary>
     /// Stores info on cars in memory
     /// </summary>
-    internal class Car
+    internal class Car : Vehicle
     {
-        // setup local variables
-        private static int count = 0;
-        private readonly int id;
-        private string make;
-        private string model;
-        private int year;
-        private decimal price;
-        private bool isNew;
+        // Setup local properties
+        private bool isElectric;
 
         /// <summary>
         /// Fill all the variables about the car
@@ -28,142 +22,42 @@ namespace CarList
         /// <param name="year">The year the car was made</param>
         /// <param name="price">The price of the car</param>
         /// <param name="isNew">If the car is used or not</param>
-        public Car(string make, string model, int year, decimal price, bool isNew) : this()
+        public Car(string make, string model, int year, decimal price, bool isNew, bool isElectric) : base(make, model, year, price, isNew)
         {
-            this.make = make;
-            this.model = model;
-            this.year = year;
-            this.price = price;
-            this.isNew = isNew;
+            this.isElectric = isElectric;
         }
 
         /// <summary>
         /// Defualt constructor
         /// </summary>
-        public Car() 
+        public Car() : base()
         {
-            this.make = "";
-            this.model = "";
-            this.year = 0;
-            this.price = 0;
-            this.isNew = false;
-            // Auto increment the id 
-            this.id = count++;
+            this.isElectric = false;
         }
-
+        
         /// <summary>
-        /// Resets the count to 0
+        /// Getter and setter for isElectric property
         /// </summary>
-        public static void ResetCount()
-        {
-            count = 0;
-        }
-
-        /// <summary>
-        /// Getter and setter for the IsNew variable 
-        /// </summary>
-        public bool IsNew
+        public bool IsElectric
         {
             get
             {
-                return isNew;
+                return isElectric;
             }
 
             set
             {
-                isNew = value;
+                isElectric = value;
             }
         }
 
         /// <summary>
-        /// Getter for the id variable 
+        /// Returns a string of all the properties in the class
         /// </summary>
-        public int Id
-        {
-            get
-            {
-                return id;
-            }
-        }
-
-        /// <summary>
-        /// Getter and setter for the make variable 
-        /// </summary>
-        public string Make
-        {
-            get
-            {
-                return make;
-            }
-
-            set
-            {
-                make = value;
-            }
-        }
-
-        /// <summary>
-        /// Getter and setter for the Model variable 
-        /// </summary>
-        public string Model
-        {
-            get
-            {
-                return model;
-            }
-
-            set
-            {
-                model = value;
-            }
-        }
-
-        /// <summary>
-        /// Getter and setter for the Year variable 
-        /// </summary>
-        public int Year
-        {
-            get
-            {
-                return year;
-            }
-
-            set
-            {
-                year = value;
-            }
-        }
-
-        /// <summary>
-        /// Getter and setter for the Price variable 
-        /// </summary>
-        public decimal Price
-        {
-            get
-            {
-                return price;
-            }
-
-            set
-            {
-                price = value;
-            }
-        }
-
-        /// <summary>
-        /// Static getter for the Count variable 
-        /// </summary>
-        public static int Count
-        {
-            get
-            {
-                return count;
-            }
-        }
-
+        /// <returns>A human readable string of all properties in the class</returns>
         public override string ToString()
         {
-            return String.Format("ID: %s, Make: %s, Model: %s, Year: %s, Price: New: %s", id, make, model, year, price, isNew);
+            return base.ToString() + String.Format(", Electric: %s", isElectric);
         }
     }
 }

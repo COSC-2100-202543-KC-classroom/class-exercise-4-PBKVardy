@@ -44,8 +44,8 @@ namespace CarList
                 if (decimal.TryParse(txtPrice.Text, out decimal price))
                 {
                     price = Math.Round(price, 2);
-                    // Create the new car then add it to the list
-                    cars.Add(new Car(comboBoxMake.Text, txtModel.Text, int.Parse(comboBoxYear.Text), price, checkBoxNew.IsChecked.Value));
+                    // Create the new car then add it to the list using false by default for the electric property
+                    cars.Add(new Car(comboBoxMake.Text, txtModel.Text, int.Parse(comboBoxYear.Text), price, checkBoxNew.IsChecked.Value, false));
                 } 
                 // Otherwise when the price is not a decimal
                 else

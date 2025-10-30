@@ -6,9 +6,12 @@
 
 namespace CarList
 {
+    /// <summary>
+    /// Abstract class for a list to display different types of vehicles
+    /// </summary>
     internal abstract class Vehicle
     {
-        // setup local variables
+        // setup local properties
         private static int count = 0;
         private readonly int id;
         private string make;
@@ -18,7 +21,7 @@ namespace CarList
         private bool isNew;
 
         /// <summary>
-        /// Fill all the variables about the vehicle
+        /// Fill all the properties about the vehicle
         /// </summary>
         /// <param name="make">The make of the vehicle</param>
         /// <param name="model">The model of the vehicle</param>
@@ -57,7 +60,7 @@ namespace CarList
         }
 
         /// <summary>
-        /// Getter and setter for the IsNew variable 
+        /// Getter and setter for the IsNew property 
         /// </summary>
         public bool IsNew
         {
@@ -73,7 +76,7 @@ namespace CarList
         }
 
         /// <summary>
-        /// Getter for the id variable 
+        /// Getter for the id property 
         /// </summary>
         public int Id
         {
@@ -84,7 +87,7 @@ namespace CarList
         }
 
         /// <summary>
-        /// Getter and setter for the make variable 
+        /// Getter and setter for the make property 
         /// </summary>
         public string Make
         {
@@ -100,7 +103,7 @@ namespace CarList
         }
 
         /// <summary>
-        /// Getter and setter for the Model variable 
+        /// Getter and setter for the Model property 
         /// </summary>
         public string Model
         {
@@ -116,7 +119,7 @@ namespace CarList
         }
 
         /// <summary>
-        /// Getter and setter for the Year variable 
+        /// Getter and setter for the Year property 
         /// </summary>
         public int Year
         {
@@ -132,7 +135,7 @@ namespace CarList
         }
 
         /// <summary>
-        /// Getter and setter for the Price variable 
+        /// Getter and setter for the Price property 
         /// </summary>
         public decimal Price
         {
@@ -148,7 +151,7 @@ namespace CarList
         }
 
         /// <summary>
-        /// Static getter for the Count variable 
+        /// Static getter for the Count property 
         /// </summary>
         public static int Count
         {
@@ -158,6 +161,10 @@ namespace CarList
             }
         }
 
+        /// <summary>
+        /// Returns a string of all the properties in the class
+        /// </summary>
+        /// <returns>A human readable string of all properties in the class</returns>
         public override string ToString()
         {
             return String.Format("ID: %s, Make: %s, Model: %s, Year: %s, Price: New: %s", id, make, model, year, price, isNew);
