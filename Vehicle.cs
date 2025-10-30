@@ -1,15 +1,12 @@
-﻿// Author:  Kyle Chapman and Kyle Vardy
-// Created: October 1, 2025
+﻿// Author:  Kyle Vardy
+// Created: October 30, 2025
 // Updated: October 30, 2025
 // Description:
-// Object storing infromation about a car extending the vehicle class
+// An abstract object that stores infromation on a vehicle to demonstrate inheritance
 
 namespace CarList
 {
-    /// <summary>
-    /// Stores info on cars in memory
-    /// </summary>
-    internal class Car
+    internal abstract class Vehicle
     {
         // setup local variables
         private static int count = 0;
@@ -21,14 +18,14 @@ namespace CarList
         private bool isNew;
 
         /// <summary>
-        /// Fill all the variables about the car
+        /// Fill all the variables about the vehicle
         /// </summary>
-        /// <param name="make">The make of the car</param>
-        /// <param name="model">The model of the car</param>
-        /// <param name="year">The year the car was made</param>
-        /// <param name="price">The price of the car</param>
-        /// <param name="isNew">If the car is used or not</param>
-        public Car(string make, string model, int year, decimal price, bool isNew) : this()
+        /// <param name="make">The make of the vehicle</param>
+        /// <param name="model">The model of the vehicle</param>
+        /// <param name="year">The year the vehicle was made</param>
+        /// <param name="price">The price of the vehicle</param>
+        /// <param name="isNew">If the vehicle is used or not</param>
+        public Vehicle(string make, string model, int year, decimal price, bool isNew) : this()
         {
             this.make = make;
             this.model = model;
@@ -40,7 +37,7 @@ namespace CarList
         /// <summary>
         /// Defualt constructor
         /// </summary>
-        public Car() 
+        public Vehicle()
         {
             this.make = "";
             this.model = "";

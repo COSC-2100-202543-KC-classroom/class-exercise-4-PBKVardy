@@ -1,14 +1,11 @@
-﻿using System.Collections.ObjectModel;
-using System.Text;
+﻿// Author:  Kyle Vardy
+// Created: October 29, 2025
+// Updated: October 30, 2025
+// Description:
+// User interface allowing you to create and view a list of vehicles
+
+using System.Collections.ObjectModel;
 using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
 
 namespace CarList
 {
@@ -70,6 +67,7 @@ namespace CarList
         /// </summary>
         private void ResetButtonClick(object sender, RoutedEventArgs e)
         {
+            // Reset everything
             comboBoxMake.SelectedIndex = -1;
             comboBoxYear.SelectedIndex = -1;
             txtModel.Text = "";
