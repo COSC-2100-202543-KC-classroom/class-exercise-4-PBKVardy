@@ -16,7 +16,7 @@ namespace CarList
     internal class Car
     {
         // setup local variables
-        private static int count = -1;
+        private static int count = 0;
         private readonly int id;
         private string make;
         private string model;
@@ -41,6 +41,14 @@ namespace CarList
             this.isNew = isNew;
             // Auto increment the id 
             this.id = count++;
+        }
+
+        /// <summary>
+        /// Resets the count to 0
+        /// </summary>
+        public static void ResetCount()
+        {
+            count = 0;
         }
 
         /// <summary>

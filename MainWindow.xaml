@@ -45,8 +45,8 @@
                 <DataGridTextColumn Header="Price" Binding="{Binding Price}" Width="60*"/>
             </DataGrid.Columns>
         </DataGrid>
-        <Button Content="Exit" HorizontalAlignment="Right" Margin="0,0,10,0" Grid.Row="2" VerticalAlignment="Center" Width="40"/>
-        <Button Content="Reset" HorizontalAlignment="Right" Margin="0,0,60,0" Grid.Row="2" VerticalAlignment="Center" Width="40"/>
+        <Button Content="Exit" HorizontalAlignment="Right" Margin="0,0,10,0" Grid.Row="2" VerticalAlignment="Center" Width="40" Click="ExitButtonClick"/>
+        <Button Content="Reset" HorizontalAlignment="Right" Margin="0,0,60,0" Grid.Row="2" VerticalAlignment="Center" Width="40" Click="ResetButtonClick"/>
         <Button Content="Enter" HorizontalAlignment="Right" Margin="0,0,110,0" Grid.Row="2" VerticalAlignment="Center" Width="40" Click="EnterButtonClick"/>
     </Grid>
 </Window>
