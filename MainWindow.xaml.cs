@@ -26,6 +26,13 @@ namespace CarList
             cars.Add(new Car("T", "e", 2, 7, false));
 
             carsList.ItemsSource = cars;
+            
+            // Setup year combobox
+            for (int i = DateTime.Now.Year; i >= DateTime.Now.Year - 50; i--)
+            {
+                comboBoxYear.Items.Add(i);
+            }
+
         }
     }
 }
