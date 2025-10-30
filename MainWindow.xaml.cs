@@ -46,6 +46,7 @@ namespace CarList
                 // and price can be a decimal
                 if (decimal.TryParse(txtPrice.Text, out decimal price))
                 {
+                    price = Math.Round(price, 2);
                     // Create the new car then add it to the list
                     cars.Add(new Car(comboBoxMake.Text, txtModel.Text, int.Parse(comboBoxYear.Text), price, checkBoxNew.IsChecked.Value));
                 } 
@@ -53,7 +54,7 @@ namespace CarList
                 else
                 {
                     // Show the error
-                    MessageBox.Show("Price must be a valid number x.xx");
+                    MessageBox.Show("Price must be a valid number");
                 }
             } 
             // Otherwise when not everything is filled

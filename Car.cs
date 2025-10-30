@@ -32,13 +32,26 @@ namespace CarList
         /// <param name="year">The year the car was made</param>
         /// <param name="price">The price of the car</param>
         /// <param name="isNew">If the car is used or not</param>
-        public Car(string make, string model, int year, decimal price, bool isNew)
+        public Car(string make, string model, int year, decimal price, bool isNew) : this()
         {
             this.make = make;
             this.model = model;
             this.year = year;
             this.price = price;
             this.isNew = isNew;
+            this.id = count++;
+        }
+
+        /// <summary>
+        /// Defualt constructor
+        /// </summary>
+        public Car() 
+        {
+            this.make = "";
+            this.model = "";
+            this.year = 0;
+            this.price = 0;
+            this.isNew = false;
             // Auto increment the id 
             this.id = count++;
         }
@@ -151,6 +164,11 @@ namespace CarList
             {
                 return count;
             }
+        }
+
+        public override string ToString()
+        {
+            return String.Format("ID: %s, Make: %s, Model: %s, Year: %s, Price: New: %s", id, make, model, year, price, isNew);
         }
     }
 }
