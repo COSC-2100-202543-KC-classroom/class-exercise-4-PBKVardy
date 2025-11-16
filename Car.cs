@@ -51,6 +51,14 @@ namespace CarList
                 isElectric = value;
             }
         }
+        
+        public string Type
+        {
+            get
+            {
+                return "Car";
+            }
+        }
 
         /// <summary>
         /// Returns a string of all the properties in the class

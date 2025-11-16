@@ -53,6 +53,14 @@ namespace CarList
             }
         }
 
+        public string Type
+        {
+            get
+            {
+                return "Tricycle";
+            }
+        }
+        
         /// <summary>
         /// Returns a string of all the properties in the class
         /// </summary>
