@@ -7,7 +7,7 @@
 namespace CarList
 {
     /// <summary>
-    /// Stores info on cars in memory
+    /// Stores info on Trycycles in memory
     /// </summary>
     internal class Trycycle : Vehicle
     {
@@ -15,13 +15,13 @@ namespace CarList
         private double handleBarHeight;
 
         /// <summary>
-        /// Fill all the variables about the car
+        /// Fill all the variables about the Trycycle
         /// </summary>
-        /// <param name="make">The make of the car</param>
-        /// <param name="model">The model of the car</param>
-        /// <param name="year">The year the car was made</param>
-        /// <param name="price">The price of the car</param>
-        /// <param name="isNew">If the car is used or not</param>
+        /// <param name="make">The make of the trycycle</param>
+        /// <param name="model">The model of the trycycle</param>
+        /// <param name="year">The year the trycycle was made</param>
+        /// <param name="price">The price of the trycycle</param>
+        /// <param name="isNew">If the trycycle is used or not</param>
         /// <param name="handleBarHeight">The height of the handle bar in centimeters</param>
         public Trycycle(string make, string model, int year, decimal price, bool isNew, double handleBarHeight) : base(make, model, year, price, isNew)
         {
