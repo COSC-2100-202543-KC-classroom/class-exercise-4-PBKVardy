@@ -6,6 +6,7 @@
 
 using System.Collections.ObjectModel;
 using System.Windows;
+using System.Windows.Controls;
 
 namespace CarList
 {
@@ -83,6 +84,28 @@ namespace CarList
         private void ExitButtonClick(object sender, RoutedEventArgs e)
         {
             Environment.Exit(0);
+        }
+
+        /// <summary>
+        /// Changes visibility of handle bar height and clears it
+        /// </summary>
+        private void TypeChangedEvent(object sender, System.Windows.Controls.SelectionChangedEventArgs e)
+        {
+            // ComboBox typeBox = (ComboBox) sender;
+            // switch (typeBox.SelectedIndex)
+            // {
+            //     // 0 == car
+            //     // 1 == tricycle
+            //     case (0):
+            //         txtHandleBarHeight.Visibility = Visibility.Hidden;
+            //         labelHandleBarHeight.Visibility = Visibility.Hidden;
+            //         txtHandleBarHeight.Text = "";
+            //         break;
+            //     case(1):
+            //         txtHandleBarHeight.Visibility = Visibility.Visible;
+            //         labelHandleBarHeight.Visibility = Visibility.Visible;
+            //         break;
+            // }
         }
     }
 }

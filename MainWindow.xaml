@@ -42,7 +42,7 @@
                     <TextBox x:Name="txtModel" HorizontalAlignment="Left" Margin="224,71,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" Grid.Row="0" ToolTip="Enter the model of the vehicle"/>
                     <ComboBox x:Name="comboBoxYear" HorizontalAlignment="Left" Margin="224,109,0,0" VerticalAlignment="Top" Width="120" Grid.Row="0" ToolTip="Choose the year of the vehicle"/>
                     <TextBox x:Name="txtPrice" HorizontalAlignment="Left" Margin="224,150,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" Grid.Row="0" ToolTip="Enter the price of the vehicle"/>
-                    <ComboBox x:Name="comboBoxType" SelectedIndex="0" HorizontalAlignment="Left" Margin="224,191,0,0" VerticalAlignment="Top" Width="120" Grid.Row="0" ToolTip="Choose the year of the vehicle">
+                    <ComboBox x:Name="comboBoxType" SelectedIndex="0" HorizontalAlignment="Left" Margin="224,191,0,0" VerticalAlignment="Top" Width="120" Grid.Row="0" ToolTip="Choose the year of the vehicle" SelectionChanged="TypeChangedEvent">
                         <ComboBoxItem>Car</ComboBoxItem>
                         <ComboBoxItem>Tricycle</ComboBoxItem>
                     </ComboBox>
