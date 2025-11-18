@@ -34,6 +34,7 @@ namespace CarList
                 // Add the year to the comboBox
                 comboBoxYear.Items.Add(i);
             }
+            UpdateStatus("Program Initialized.");
         }
 
         /// <summary>
@@ -67,26 +68,31 @@ namespace CarList
                         
                         // Add it to the list
                         vehicles.Add(newVehicle);
-                        txtStatusBar.Text = "Added new vehicle: " + newVehicle;
+                        UpdateStatus("Added new vehicle: " + newVehicle);
                     }
                     else
                     {
-                        txtStatusBar.Text = "Handle bar height must be a number";
+                        UpdateStatus("Handle bar height must be a number");
                     }
                 } 
                 // Otherwise when the price is not a decimal
                 else
                 {
                     // Show the error
-                    txtStatusBar.Text = "Price must be a valid number";
+                    UpdateStatus("Price must be a valid number");
                 }
             } 
             // Otherwise when not everything is filled
             else
             {
                 // Show the error
-                txtStatusBar.Text = "All fields must be filled";
+                UpdateStatus("All fields must be filled");
             }
+        }
+
+        private void UpdateStatus(string newStatus)
+        {
+            txtStatusBar.Text = DateTime.Now.ToShortTimeString() + ": " + newStatus;
         }
 
         /// <summary>
