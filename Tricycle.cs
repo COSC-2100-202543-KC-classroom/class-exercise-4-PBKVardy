@@ -67,7 +67,7 @@ namespace CarList
         /// <returns>A human readable string of all properties in the class</returns>
         public override string ToString()
         {
-            return base.ToString() + String.Format(", Handle Bar Height: %s", handleBarHeight);
+            return base.ToString() + String.Format(", Handle Bar Height: {0}", handleBarHeight);
         }
     }
 }

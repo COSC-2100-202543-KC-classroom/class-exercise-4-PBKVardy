@@ -47,31 +47,45 @@ namespace CarList
                 if (decimal.TryParse(txtPrice.Text, out decimal price))
                 {
                     price = Math.Round(price, 2);
-                    // Create the new car then add it to the list
-                    switch (comboBoxType.SelectedIndex)
+                    
+                    // Try to parse the bar height or if its a car
+                    if (comboBoxType.SelectedIndex == 0 || double.TryParse(txtHandleBarHeight.Text, out double barHeight))
+                    {
+                        Vehicle newVehicle = null;
+                        // Create the new vehicle from the fourm data
+                        switch (comboBoxType.SelectedIndex)
                         {
                             // 0 == car
                             // 1 == tricycle
                             case (0):
-                                vehicles.Add(new Car(comboBoxMake.Text, txtModel.Text, int.Parse(comboBoxYear.Text), price, checkBoxNew.IsChecked.Value, checkBoxIsElectric.IsChecked.Value));
+                                 newVehicle = new Car(comboBoxMake.Text, txtModel.Text, int.Parse(comboBoxYear.Text), price, checkBoxNew.IsChecked.Value, checkBoxIsElectric.IsChecked.Value);
                                 break;
                             case (1):
-                            vehicles.Add(new Tricycle(comboBoxMake.Text, txtModel.Text, int.Parse(comboBoxYear.Text), price, checkBoxNew.IsChecked.Value, double.Parse(txtHandleBarHeight.Text)));
+                                newVehicle = new Tricycle(comboBoxMake.Text, txtModel.Text, int.Parse(comboBoxYear.Text), price, checkBoxNew.IsChecked.Value, double.Parse(txtHandleBarHeight.Text));
                                 break;
                         }
+                        
+                        // Add it to the list
+                        vehicles.Add(newVehicle);
+                        txtStatusBar.Text = "Added new vehicle: " + newVehicle;
+                    }
+                    else
+                    {
+                        txtStatusBar.Text = "Handle bar height must be a number";
+                    }
                 } 
                 // Otherwise when the price is not a decimal
                 else
                 {
                     // Show the error
-                    MessageBox.Show("Price must be a valid number");
+                    txtStatusBar.Text = "Price must be a valid number";
                 }
             } 
             // Otherwise when not everything is filled
             else
             {
                 // Show the error
-                MessageBox.Show("All fields must be filled");
+                txtStatusBar.Text = "All fields must be filled";
             }
         }
 

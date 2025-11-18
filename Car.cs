@@ -66,7 +66,7 @@ namespace CarList
         /// <returns>A human readable string of all properties in the class</returns>
         public override string ToString()
         {
-            return base.ToString() + String.Format(", Electric: %s", isElectric);
+            return base.ToString() + String.Format(", Electric: {0}", isElectric);
         }
     }
 }

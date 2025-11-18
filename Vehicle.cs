@@ -175,7 +175,7 @@ namespace CarList
         /// <returns>A human readable string of all properties in the class</returns>
         public override string ToString()
         {
-            return String.Format("ID: %s, Make: %s, Model: %s, Year: %s, Price: New: %s", id, make, model, year, price, isNew);
+            return String.Format("ID: {0}, Make: {1}, Model: {2}, Year: {3}, Price: {4}, New: {5}", id, make, model, year, price, isNew);
         }
     }
 }
