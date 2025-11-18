@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:CarList"
         mc:Ignorable="d"
-        Title="CarList" Height="480" Width="600" MinHeight="440" MinWidth="350">
+        Title="CarList" Height="520" Width="600" MinHeight="520" MinWidth="380">
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height = "*"/>
@@ -47,7 +47,7 @@
                         <ComboBoxItem>Tricycle</ComboBoxItem>
                     </ComboBox>
                     <CheckBox x:Name="checkBoxNew" HorizontalAlignment="Left" Margin="224,234,0,0" VerticalAlignment="Top" Grid.Row="0" ToolTip="Select if the vehicle is new"/>
-                    <TextBox x:Name="txtHandleBarHeight" HorizontalAlignment="Left" Margin="224,272,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" Grid.Row="0" ToolTip="Enter the height of the handle bars" Visibility="Hidden"/>
+                    <TextBox x:Name="txtHandleBarHeight" HorizontalAlignment="Left" Margin="224,272,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" Grid.Row="0" ToolTip="Enter the height of the handle bars in cm" Visibility="Hidden"/>
                     <Button Content="En_ter" HorizontalAlignment="Center" Margin="0,0,100,0" Grid.Row="1" VerticalAlignment="Center" Width="40" Click="EnterButtonClick" ToolTip="Enter the vehicle to the list"/>
                     <Button Content="_Reset" HorizontalAlignment="Center" Margin="100,0,0,0" Grid.Row="1" VerticalAlignment="Center" Width="40" Click="ResetButtonClick" ToolTip="Reset the screen and the list"/>
                 </Grid>

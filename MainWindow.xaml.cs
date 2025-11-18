@@ -17,6 +17,8 @@ namespace CarList
     {
         // Cars list as an observable collection so the list will auto update when I add to it
         ObservableCollection<Car> cars = new ObservableCollection<Car>();
+        // Variable to store if its the first run, if is, don't do anything for the type change event
+        private bool firstRun = true;
 
         public MainWindow()
         {
@@ -91,21 +93,26 @@ namespace CarList
         /// </summary>
         private void TypeChangedEvent(object sender, System.Windows.Controls.SelectionChangedEventArgs e)
         {
-            // ComboBox typeBox = (ComboBox) sender;
-            // switch (typeBox.SelectedIndex)
-            // {
-            //     // 0 == car
-            //     // 1 == tricycle
-            //     case (0):
-            //         txtHandleBarHeight.Visibility = Visibility.Hidden;
-            //         labelHandleBarHeight.Visibility = Visibility.Hidden;
-            //         txtHandleBarHeight.Text = "";
-            //         break;
-            //     case(1):
-            //         txtHandleBarHeight.Visibility = Visibility.Visible;
-            //         labelHandleBarHeight.Visibility = Visibility.Visible;
-            //         break;
-            // }
+            // Hacky fix for the handelbar not existing when the event is first called
+            if (firstRun) firstRun = false;
+            else
+            {
+                ComboBox typeBox = (ComboBox)sender;
+                switch (typeBox.SelectedIndex)
+                {
+                    // 0 == car
+                    // 1 == tricycle
+                    case (0):
+                        txtHandleBarHeight.Visibility = Visibility.Hidden;
+                        labelHandleBarHeight.Visibility = Visibility.Hidden;
+                        txtHandleBarHeight.Text = "";
+                        break;
+                    case (1):
+                        txtHandleBarHeight.Visibility = Visibility.Visible;
+                        labelHandleBarHeight.Visibility = Visibility.Visible;
+                        break;
+                }
+            }
         }
     }
 }
