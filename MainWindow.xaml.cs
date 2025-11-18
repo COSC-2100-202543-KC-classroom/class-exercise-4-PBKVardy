@@ -53,7 +53,7 @@ namespace CarList
                             // 0 == car
                             // 1 == tricycle
                             case (0):
-                                vehicles.Add(new Car(comboBoxMake.Text, txtModel.Text, int.Parse(comboBoxYear.Text), price, checkBoxNew.IsChecked.Value, false));
+                                vehicles.Add(new Car(comboBoxMake.Text, txtModel.Text, int.Parse(comboBoxYear.Text), price, checkBoxNew.IsChecked.Value, checkBoxIsElectric.IsChecked.Value));
                                 break;
                             case (1):
                             vehicles.Add(new Tricycle(comboBoxMake.Text, txtModel.Text, int.Parse(comboBoxYear.Text), price, checkBoxNew.IsChecked.Value, double.Parse(txtHandleBarHeight.Text)));
@@ -99,7 +99,7 @@ namespace CarList
         }
 
         /// <summary>
-        /// Changes visibility of handle bar height and clears it when the type is changed
+        /// Changes visibility of handle bar height and is electric + clears it when the type is changed
         /// </summary>
         private void TypeChangedEvent(object sender, System.Windows.Controls.SelectionChangedEventArgs e)
         {
@@ -116,10 +116,14 @@ namespace CarList
                         txtHandleBarHeight.Visibility = Visibility.Hidden;
                         labelHandleBarHeight.Visibility = Visibility.Hidden;
                         txtHandleBarHeight.Text = "";
+                        labelIsElectric.Visibility = Visibility.Visible;
+                        checkBoxIsElectric.Visibility = Visibility.Visible;
                         break;
                     case (1):
                         txtHandleBarHeight.Visibility = Visibility.Visible;
                         labelHandleBarHeight.Visibility = Visibility.Visible;
+                        labelIsElectric.Visibility = Visibility.Hidden;
+                        checkBoxIsElectric.Visibility = Visibility.Hidden;
                         break;
                 }
             }

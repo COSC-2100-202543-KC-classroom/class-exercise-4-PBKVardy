@@ -27,11 +27,12 @@
                     <Label Content="_Type:" HorizontalAlignment="Left" Margin="98,188,0,0" VerticalAlignment="Top" Grid.Row="0" Target="{Binding ElementName=comboBoxType}"/>
                     <Label Content="_New:" HorizontalAlignment="Left" Margin="98,228,0,0" VerticalAlignment="Top" Grid.Row="0" Target="{Binding ElementName=checkBoxNew}"/>
                     <Label x:Name="labelHandleBarHeight" Content="_Handle Bar Height:" HorizontalAlignment="Left" Margin="98,268,0,0" VerticalAlignment="Top" Grid.Row="0" Target="{Binding ElementName=txtHandleBarHeight}" Visibility="Hidden"/>
+                    <Label x:Name="labelIsElectric" Content="Ele_ctric:" HorizontalAlignment="Left" Margin="98,268,0,0" VerticalAlignment="Top" Grid.Row="0" Target="{Binding ElementName=checkBoxIsElectric}"/>
                     <ComboBox x:Name="comboBoxMake" HorizontalAlignment="Left" Margin="224,29,0,0" VerticalAlignment="Top" Width="120" Grid.Row="0" ToolTip="Choose the make of the vehicle">
                         <ComboBoxItem>Toyota</ComboBoxItem>
                         <ComboBoxItem>Honda</ComboBoxItem>
                         <ComboBoxItem>Ford</ComboBoxItem>
-                        <ComboBoxItem>Kia</ComboBoxItem>f
+                        <ComboBoxItem>Kia</ComboBoxItem>
                         <ComboBoxItem>Hyundai</ComboBoxItem>
                         <ComboBoxItem>Chevy</ComboBoxItem>
                         <ComboBoxItem>Chrysler</ComboBoxItem>
@@ -48,6 +49,7 @@
                     </ComboBox>
                     <CheckBox x:Name="checkBoxNew" HorizontalAlignment="Left" Margin="224,234,0,0" VerticalAlignment="Top" Grid.Row="0" ToolTip="Select if the vehicle is new"/>
                     <TextBox x:Name="txtHandleBarHeight" HorizontalAlignment="Left" Margin="224,272,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" Grid.Row="0" ToolTip="Enter the height of the handle bars in cm" Visibility="Hidden"/>
+                    <CheckBox x:Name="checkBoxIsElectric" HorizontalAlignment="Left" Margin="224,271,0,0" VerticalAlignment="Top" Grid.Row="0" ToolTip="Select if the car is electric"/>
                     <Button Content="En_ter" HorizontalAlignment="Center" Margin="0,0,100,0" Grid.Row="1" VerticalAlignment="Center" Width="40" Click="EnterButtonClick" ToolTip="Enter the vehicle to the list"/>
                     <Button Content="_Reset" HorizontalAlignment="Center" Margin="100,0,0,0" Grid.Row="1" VerticalAlignment="Center" Width="40" Click="ResetButtonClick" ToolTip="Reset the screen and the list"/>
                 </Grid>
