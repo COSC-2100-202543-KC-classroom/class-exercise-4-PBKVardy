@@ -2,20 +2,20 @@
 // Created: October 30, 2025
 // Updated: October 30, 2025
 // Description:
-// Object storing infromation about a Trycycle extending the vehicle class
+// Object storing infromation about a Tricycle extending the vehicle class
 
 namespace CarList
 {
     /// <summary>
     /// Stores info on Trycycles in memory
     /// </summary>
-    internal class Trycycle : Vehicle
+    internal class Tricycle : Vehicle
     {
         // Setup local properties
         private double handleBarHeight;
 
         /// <summary>
-        /// Fill all the variables about the Trycycle
+        /// Fill all the variables about the Tricycle
         /// </summary>
         /// <param name="make">The make of the trycycle</param>
         /// <param name="model">The model of the trycycle</param>
@@ -23,7 +23,7 @@ namespace CarList
         /// <param name="price">The price of the trycycle</param>
         /// <param name="isNew">If the trycycle is used or not</param>
         /// <param name="handleBarHeight">The height of the handle bar in centimeters</param>
-        public Trycycle(string make, string model, int year, decimal price, bool isNew, double handleBarHeight) : base(make, model, year, price, isNew)
+        public Tricycle(string make, string model, int year, decimal price, bool isNew, double handleBarHeight) : base(make, model, year, price, isNew)
         {
             this.handleBarHeight = handleBarHeight;
         }
@@ -31,7 +31,7 @@ namespace CarList
         /// <summary>
         /// Defualt constructor
         /// </summary>
-        public Trycycle() : base()
+        public Tricycle() : base()
         {
             this.handleBarHeight = 0;
         }
@@ -40,7 +40,7 @@ namespace CarList
         /// Getter and setter for handleBarHeight property
         /// Value should always be in centimeters
         /// </summary>
-        public double IsElectric
+        public double HandleBarHeight
         {
             get
             {

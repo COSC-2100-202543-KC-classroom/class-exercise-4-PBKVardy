@@ -53,14 +53,17 @@
                 </Grid>
             </TabItem>
             <TabItem Header="_Vehicle List">
-                <DataGrid x:Name="carsList" Grid.Row="1" IsReadOnly="True" AutoGenerateColumns="False">
+                <DataGrid x:Name="vehicleList" Grid.Row="1" IsReadOnly="True" AutoGenerateColumns="False">
                     <DataGrid.Columns>
+                        <DataGridTextColumn Header="Type" Binding="{Binding Type}" Width="40*"/>
                         <DataGridCheckBoxColumn Header="New" Binding="{Binding IsNew}" Width="40*"/>
                         <DataGridTextColumn Header="ID" Binding="{Binding Id}" Width="30*"/>
                         <DataGridTextColumn Header="Make" Binding="{Binding Make}" Width="100*"/>
                         <DataGridTextColumn Header="Model" Binding="{Binding Model}" Width="100*"/>
                         <DataGridTextColumn Header="Year" Binding="{Binding Year}" Width="40*"/>
                         <DataGridTextColumn Header="Price" Binding="{Binding Price}" Width="60*"/>
+                        <DataGridTextColumn Header="Bar Height" Binding="{Binding HandleBarHeight}" Width="60*"/>
+                        <DataGridCheckBoxColumn Header="Electric" Binding="{Binding IsElectric}" Width="40*"/>
                     </DataGrid.Columns>
                 </DataGrid>
             </TabItem>

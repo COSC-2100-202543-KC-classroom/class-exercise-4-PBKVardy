@@ -16,7 +16,7 @@ namespace CarList
     public partial class MainWindow : Window
     {
         // Cars list as an observable collection so the list will auto update when I add to it
-        ObservableCollection<Car> cars = new ObservableCollection<Car>();
+        ObservableCollection<Vehicle> vehicles = new ObservableCollection<Vehicle>();
         // Variable to store if its the first run, if is, don't do anything for the type change event
         private bool firstRun = true;
 
@@ -25,7 +25,7 @@ namespace CarList
             InitializeComponent();
 
             // Set the item source to be the cars collection
-            carsList.ItemsSource = cars;
+            vehicleList.ItemsSource = vehicles;
             
             // Setup year combobox
             // Loop through each number between this year and this year - 50
@@ -47,8 +47,18 @@ namespace CarList
                 if (decimal.TryParse(txtPrice.Text, out decimal price))
                 {
                     price = Math.Round(price, 2);
-                    // Create the new car then add it to the list using false by default for the electric property
-                    cars.Add(new Car(comboBoxMake.Text, txtModel.Text, int.Parse(comboBoxYear.Text), price, checkBoxNew.IsChecked.Value, false));
+                    // Create the new car then add it to the list
+                    switch (comboBoxType.SelectedIndex)
+                        {
+                            // 0 == car
+                            // 1 == tricycle
+                            case (0):
+                                vehicles.Add(new Car(comboBoxMake.Text, txtModel.Text, int.Parse(comboBoxYear.Text), price, checkBoxNew.IsChecked.Value, false));
+                                break;
+                            case (1):
+                            vehicles.Add(new Tricycle(comboBoxMake.Text, txtModel.Text, int.Parse(comboBoxYear.Text), price, checkBoxNew.IsChecked.Value, double.Parse(txtHandleBarHeight.Text)));
+                                break;
+                        }
                 } 
                 // Otherwise when the price is not a decimal
                 else
@@ -77,7 +87,7 @@ namespace CarList
             txtPrice.Text = "";
             checkBoxNew.IsChecked = false;
             Car.ResetCount();
-            cars.Clear();
+            vehicles.Clear();
         }
 
         /// <summary>
@@ -89,11 +99,11 @@ namespace CarList
         }
 
         /// <summary>
-        /// Changes visibility of handle bar height and clears it
+        /// Changes visibility of handle bar height and clears it when the type is changed
         /// </summary>
         private void TypeChangedEvent(object sender, System.Windows.Controls.SelectionChangedEventArgs e)
         {
-            // Hacky fix for the handelbar not existing when the event is first called
+            // Hacky fix for the handlebar not existing when the event is first called
             if (firstRun) firstRun = false;
             else
             {
