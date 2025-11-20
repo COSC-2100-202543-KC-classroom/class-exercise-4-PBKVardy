@@ -12,7 +12,7 @@
             <RowDefinition Height = "60"/>
             <RowDefinition Height = "40"/>
         </Grid.RowDefinitions>
-        <TabControl>
+        <TabControl SelectionChanged="TabChanged">
             <TabItem Header="_Add Vehicles">
                 <Grid>
                     <Grid.RowDefinitions>

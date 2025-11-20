@@ -17,8 +17,6 @@ namespace CarList
     {
         // Cars list as an observable collection so the list will auto update when I add to it
         ObservableCollection<Vehicle> vehicles = new ObservableCollection<Vehicle>();
-        // Variable to store if its the first run, if is, don't do anything for the type change event
-        private bool firstRun = true;
 
         public MainWindow()
         {
@@ -90,6 +88,10 @@ namespace CarList
             }
         }
 
+        /// <summary>
+        /// Updates the status bar with the time infront of your message
+        /// </summary>
+        /// <param name="newStatus">The message to display</param>
         private void UpdateStatus(string newStatus)
         {
             txtStatusBar.Text = DateTime.Now.ToShortTimeString() + ": " + newStatus;
@@ -123,9 +125,8 @@ namespace CarList
         /// </summary>
         private void TypeChangedEvent(object sender, System.Windows.Controls.SelectionChangedEventArgs e)
         {
-            // Hacky fix for the handlebar not existing when the event is first called
-            if (firstRun) firstRun = false;
-            else
+            // Dont process the event until after the xaml is initialized
+            if (IsInitialized)
             {
                 ComboBox typeBox = (ComboBox)sender;
                 switch (typeBox.SelectedIndex)
@@ -146,6 +147,20 @@ namespace CarList
                         checkBoxIsElectric.Visibility = Visibility.Hidden;
                         break;
                 }
+            }
+        }
+
+        /// <summary>
+        /// Shows a new status when the tab is changed. Update stats when that tab is selected.
+        /// </summary>
+        private void TabChanged(object sender, SelectionChangedEventArgs e)
+        {
+            // Dont process the event until after the xaml is initialized
+            if (IsInitialized) 
+            {
+                TabControl tabControl = (TabControl)sender;
+                TabItem item = (TabItem)tabControl.SelectedItem;
+                UpdateStatus("Changed tab to " + item.Header.ToString().Replace("_", ""));
             }
         }
     }
