@@ -114,6 +114,10 @@ namespace CarList
 
             set
             {
+                if (model == null)
+                {
+                    throw new ArgumentNullException();
+                }
                 model = value;
             }
         }
@@ -146,6 +150,10 @@ namespace CarList
 
             set
             {
+                if (price > 0)
+                {
+                    throw new ArgumentOutOfRangeException();
+                }
                 price = value;
             }
         }
