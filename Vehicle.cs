@@ -169,12 +169,12 @@ namespace CarList
             }
         }
 
-        public string Type
+        /// <summary>
+        /// Type of vehicle to be vehicle
+        /// </summary>
+        public abstract string Type
         {
-            get
-            {
-                return "Vehicle";
-            }
+            get;
         }
 
         /// <summary>

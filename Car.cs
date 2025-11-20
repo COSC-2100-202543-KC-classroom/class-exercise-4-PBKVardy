@@ -52,7 +52,10 @@ namespace CarList
             }
         }
         
-        public string Type
+        /// <summary>
+        /// Type of vehicle to be car
+        /// </summary>
+        public override string Type
         {
             get
             {
