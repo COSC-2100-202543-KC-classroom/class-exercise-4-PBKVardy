@@ -98,6 +98,31 @@ namespace CarList
         }
 
         /// <summary>
+        /// Updates the displayed statistics
+        /// </summary>
+        private void UpdateStatistics()
+        {
+            // Set the count
+            txtTotalVehicles.Text = vehicles.Count.ToString();
+            
+            // Get the total price
+            decimal totalPrice = 0;
+            foreach (Vehicle vehicle in vehicles)
+            {
+                totalPrice += vehicle.Price;
+            }
+            
+            // Update the total and average price.
+            txtTotalPrice.Text = totalPrice.ToString();
+            
+            // Do not divide by 0
+            if (vehicles.Count == 0)
+                txtAvgPrice.Text = "0";
+            else
+                txtAvgPrice.Text = (totalPrice / vehicles.Count).ToString();
+        }
+
+        /// <summary>
         /// Resets the window
         /// </summary>
         private void ResetButtonClick(object sender, RoutedEventArgs e)
@@ -161,6 +186,10 @@ namespace CarList
                 TabControl tabControl = (TabControl)sender;
                 TabItem item = (TabItem)tabControl.SelectedItem;
                 UpdateStatus("Changed tab to " + item.Header.ToString().Replace("_", ""));
+                if (item.Header.ToString() == "_Statistics")
+                {
+                    UpdateStatistics();
+                }
             }
         }
     }
